@@ -1,0 +1,49 @@
+.hero {
+  background-image: url('https://blackpepper.travel/cache/2024-01/blackpepper-viajes-islandia-0030-galeria-2x-1181x786.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 55vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  position: relative;
+  padding: 20px;
+}
+
+/* Estilo para el contenedor del formulario */
+.search-form {
+  background-color: white;
+  border-radius: 10px;
+  padding: 15px;
+  max-width: 900px; /* Limita el ancho máximo */
+  margin: 0 auto;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Título más pequeño en pantallas pequeñas */
+.hero-title {
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.form-label {
+  color: black !important;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    height: auto;
+    padding: 40px 10px;
+  }
+  .hero-title {
+    font-size: 1.5rem;
+  }
+  .lead {
+    font-size: 1rem;
+  }
+  .search-form {
+    padding: 10px;
+  }
+}

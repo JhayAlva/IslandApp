@@ -1,0 +1,122 @@
+<div class="hero">
+  <div class="container">
+    <!-- Contenido principal -->
+    <div class="hero-content mb-4">
+      <h1 class="hero-title">Todo lo que necesitas para la aventura islandesa de tus sueños</h1>
+      <p class="lead">Como la mayor agencia de viajes de Islandia, buscamos entre más de 2000 proveedores de servicios
+        de viajes para darte las mejores ofertas al mejor precio garantizado</p>
+    </div>
+
+    <!-- Formulario -->
+    <div class="search-form">
+      <!-- Pestañas -->
+      <ul class="nav nav-pills justify-content-center mb-3" id="pills-tab" role="tablist">
+        <!-- Tours -->
+        <li class="nav-item" role="presentation">
+          <button class="nav-link active" id="tours-tab" data-bs-toggle="pill" data-bs-target="#tours" type="button"
+            role="tab">
+            <i class="bi bi-compass"></i> Tours
+          </button>
+        </li>
+        <!-- Coches -->
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="coches-tab" data-bs-toggle="pill" data-bs-target="#coches" type="button"
+            role="tab">
+            <i class="bi bi-car-front"></i> Coches
+          </button>
+        </li>
+        <!-- Alojamiento -->
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="alojamiento-tab" data-bs-toggle="pill" data-bs-target="#alojamiento"
+            type="button" role="tab">
+            <i class="bi bi-house"></i> Alojamiento
+          </button>
+        </li>
+        <!-- Vuelos -->
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="vuelos-tab" data-bs-toggle="pill" data-bs-target="#vuelos" type="button"
+            role="tab">
+            <i class="bi bi-airplane"></i> Vuelos
+          </button>
+        </li>
+      </ul>
+
+
+      <!-- Contenido de las pestañas -->
+      <div class="tab-content" id="pills-tabContent">
+        <!-- Formulario Tours -->
+        <div class="tab-pane fade show active" id="tours" role="tabpanel" aria-labelledby="tours-tab">
+          <form class="row g-3">
+            <div class="col-12 col-md-4">
+              <label for="ubicacion" class="form-label">Ubicación</label>
+              <input type="text" class="form-control" id="ubicacion" placeholder="Islandia, cualquier ubicación">
+            </div>
+            <div class="col-6 col-md-2">
+              <label for="fechaInicio" class="form-label">Fecha inicio</label>
+              <input type="date" class="form-control" id="fechaInicio" value="2024-08-03">
+            </div>
+            <div class="col-6 col-md-2">
+              <label for="fechaFin" class="form-label">Fecha fin</label>
+              <input type="date" class="form-control" id="fechaFin" value="2024-08-09">
+            </div>
+            <div class="col-12 col-md-2">
+              <label for="personas" class="form-label">Personas</label>
+              <select class="form-select" id="personas">
+                <option selected>1 persona</option>
+                <option value="2">2 personas</option>
+                <option value="3">3 personas</option>
+              </select>
+            </div>
+            <div class="col-12 col-md-2 d-flex align-items-end">
+              <button type="submit" class="btn btn-success w-100">Buscar</button>
+            </div>
+          </form>
+        </div>
+
+        <!-- Formulario Coches -->
+        <div class="tab-pane fade" id="coches" role="tabpanel" aria-labelledby="coches-tab">
+          <form class="row g-3">
+            <div class="col-12 col-md-4">
+              <label for="ubicacion" class="form-label">Elegir ubicación</label>
+              <select class="form-select" id="pickup-location">
+                <option selected disabled>Selecciona una ubicación</option>
+                <option value="islandia-reykjavik">Reykjavik</option>
+                <option value="islandia-akureyri">Akureyri</option>
+                <option value="islandia-selfoss">Selfoss</option>
+                <option value="islandia-keflavik">Keflavik</option>
+              </select>
+            </div>
+            <div class="col-6 col-md-2">
+              <label for="fechaInicio" class="form-label">Fecha de recogida</label>
+              <input type="date" class="form-control" id="fechaInicio" value="2024-08-03">
+            </div>
+            <div class="col-6 col-md-2">
+              <label for="fechaFin" class="form-label">Hora de recogida</label>
+              <input type="time" class="form-control" id="pickup-time">
+            </div>
+            <div class="col-6 col-md-2">
+              <label for="driver-age" class="form-label">Edad del conductor</label>
+              <input type="number" class="form-control" id="driver-age" placeholder="Ingresa tu edad" min="18">
+            </div>
+            <div class="col-12 col-md-2">
+              <label for="residence-country" class="form-label">Vivo en</label>
+              <select class="form-select" id="residence-country">
+                <option selected disabled>Selecciona tu país</option>
+                <option value="es">España</option>
+                <option value="is">Islandia</option>
+                <option value="fr">Francia</option>
+                <option value="us">Estados Unidos</option>
+                <option value="other">Otro</option>
+              </select>
+            </div>
+            <div class="col-12 col-md-2 d-flex align-items-end">
+              <button type="submit" class="btn btn-success w-100">Buscar Coches</button>
+            </div>
+          </form>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

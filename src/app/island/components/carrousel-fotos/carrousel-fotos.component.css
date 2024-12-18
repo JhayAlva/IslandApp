@@ -1,0 +1,4 @@
+.carousel-item img {
+  height: 500px; /* Altura fija */
+  object-fit: cover; /* Ajusta la imagen para que cubra el contenedor sin deformarse */
+}

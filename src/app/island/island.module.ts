@@ -7,6 +7,8 @@ import { LayoutPageComponent } from './layout/layout-page/layout-page.component'
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { CarrouselFotosComponent } from './components/carrousel-fotos/carrousel-fotos.component';
 import { HeroComponent } from './components/hero/hero.component';
+import { PrimengModule } from '../primeng/primeng.module';
+
 
 
 @NgModule({
@@ -19,6 +21,7 @@ import { HeroComponent } from './components/hero/hero.component';
   ],
   imports: [
     CommonModule,
+    PrimengModule,
     IslandRoutingModule
 ]
 })

@@ -7,116 +7,135 @@
         de viajes para darte las mejores ofertas al mejor precio garantizado</p>
     </div>
 
-    <!-- Formulario -->
-    <div class="search-form">
-      <!-- Pestañas -->
-      <ul class="nav nav-pills justify-content-center mb-3" id="pills-tab" role="tablist">
-        <!-- Tours -->
-        <li class="nav-item" role="presentation">
-          <button class="nav-link active" id="tours-tab" data-bs-toggle="pill" data-bs-target="#tours" type="button"
-            role="tab">
-            <i class="bi bi-compass"></i> Tours
-          </button>
-        </li>
-        <!-- Coches -->
-        <li class="nav-item" role="presentation">
-          <button class="nav-link" id="coches-tab" data-bs-toggle="pill" data-bs-target="#coches" type="button"
-            role="tab">
-            <i class="bi bi-car-front"></i> Coches
-          </button>
-        </li>
-        <!-- Alojamiento -->
-        <li class="nav-item" role="presentation">
-          <button class="nav-link" id="alojamiento-tab" data-bs-toggle="pill" data-bs-target="#alojamiento"
-            type="button" role="tab">
-            <i class="bi bi-house"></i> Alojamiento
-          </button>
-        </li>
-        <!-- Vuelos -->
-        <li class="nav-item" role="presentation">
-          <button class="nav-link" id="vuelos-tab" data-bs-toggle="pill" data-bs-target="#vuelos" type="button"
-            role="tab">
-            <i class="bi bi-airplane"></i> Vuelos
-          </button>
-        </li>
-      </ul>
+    <p-tabs value="0" scrollable>
+      <p-tablist>
+        <p-tab value="0">
+          <i class="pi pi-bell" style="font-size: 1rem">
+          </i>Tours
+        </p-tab>
+        <p-tab value="1">
+          <i class="pi pi-car" style="font-size: 1rem">
+          </i>
+          Coches
+        </p-tab>
+        <p-tab value="2">
+          <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed">
+            <path
+              d="M400-80v-80h520v80H400Zm40-120q0-81 51-141.5T620-416v-25q0-17 11.5-28.5T660-481q17 0 28.5 11.5T700-441v25q77 14 128.5 74.5T880-200H440Zm105-81h228q-19-27-48.5-43.5T660-341q-36 0-66 16.5T545-281Zm114 0ZM40-440v-440h240v58l280-78 320 100v40q0 50-35 85t-85 35h-80v24q0 25-14.5 45.5T628-541L358-440H40Zm80-80h80v-280h-80v280Zm160 0h64l232-85q11-4 17.5-13.5T600-640h-71l-117 38-24-76 125-42h247q9 0 22.5-6.5T796-742l-238-74-278 76v220Z" />
+          </svg>
+          Alojamiento
+        </p-tab>
+        <p-tab value="3">
+          <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed">
+            <path
+              d="M280-80v-100l120-84v-144L80-280v-120l320-224v-176q0-33 23.5-56.5T480-880q33 0 56.5 23.5T560-800v176l320 224v120L560-408v144l120 84v100l-200-60-200 60Z" />
+          </svg>
+          Vuelos
+        </p-tab>
+      </p-tablist>
+      <p-tabpanels>
+        <p-tabpanel value="0">
+          <div class="flex flex-col gap-6 w-full sm:w-auto m-0">
+            <form class="grid grid-cols-1 sm:grid-cols-5 gap-6">
+              <!-- Ubicación -->
+              <div class="flex flex-col">
+                <label for="ubicacion" class="text-sm font-medium text-white-700 mb-2">Ubicación</label>
+                <input pInputText type="text" id="ubicacion" placeholder="Islandia, cualquier ubicación"
+                  class="p-inputtext w-full" />
+              </div>
+
+              <!-- Fecha inicio -->
+              <div class="flex flex-col">
+                <label for="fechaInicio" class="text-sm font-medium text-white-700 mb-2">Fecha inicio</label>
+                <p-calendar id="fechaInicio" [showIcon]="true" dateFormat="yy-mm-dd" class="w-full"></p-calendar>
+              </div>
+
+              <!-- Fecha fin -->
+              <div class="flex flex-col">
+                <label for="fechaFin" class="text-sm font-medium text-white-700 mb-2">Fecha fin</label>
+                <p-calendar id="fechaFin" [showIcon]="true" dateFormat="yy-mm-dd" class="w-full"></p-calendar>
+              </div>
+
+              <!-- Personas -->
+              <div class="flex flex-col">
+                <label for="personas" class="text-sm font-medium text-white-700 mb-2">Personas</label>
+                <p-dropdown id="personas" [options]="personas" placeholder="1 persona" class="w-full"></p-dropdown>
+              </div>
+
+              <!-- Botón de búsqueda -->
+              <div class="flex flex-col justify-end">
+                <button pButton type="submit" label="Buscar" class="w-full" styleClass="p-button-success"></button>
+              </div>
+            </form>
+          </div>
+
+        </p-tabpanel>
+        <p-tabpanel value="1">
+          <div class="flex flex-col gap-6 w-full sm:w-auto m-0">
+            <form class="grid grid-cols-1 sm:grid-cols-5 gap-6">
+              <!-- Ubicación -->
+              <div class="flex flex-col">
+                <label for="ubicacion" class="text-sm font-medium text-white-700 mb-2">Elegir ubicación</label>
+                <p-dropdown id="ubicaciones" [options]="ubicaciones" placeholder="Selecciona una ubicación"
+                  class="w-full"></p-dropdown>
+              </div>
+
+              <!-- Fecha de recogida -->
+              <div class="flex flex-col">
+                <label for="fechaInicio" class="text-sm font-medium text-white-700 mb-2">Fecha de recogida</label>
+                <p-calendar id="fechaInicio" [showIcon]="true" dateFormat="yy-mm-dd" class="w-full"></p-calendar>
+              </div>
+
+              <!-- Hora de recogida-->
+              <div class="flex flex-col">
+                <label for="fechaFin" class="text-sm font-medium text-white-700 mb-2">Hora de recogida</label>
+                <p-calendar id="pickup-time" [timeOnly]="true" hourFormat="24" inputId="timepicker"
+                  class="w-full"></p-calendar>
+              </div>
+
+              <!-- Edad del conductor -->
+              <div class="flex flex-col">
+                <label for="personas" class="text-sm font-medium text-white-700 mb-2">Edad del conductor</label>
+                <p-inputNumber id="driver-age" placeholder="Ingresa tu edad" [min]="18" class="w-full"
+                  inputId="driver-age"></p-inputNumber>
+              </div>
+
+              <!-- Ubicación -->
+              <div class="flex flex-col">
+                <label for="ubicacion" class="text-sm font-medium text-white-700 mb-2">Vivo en</label>
+                <p-dropdown id="ubicaciones" [options]="ubicaciones" placeholder="Selecciona una ubicación"
+                  class="w-full"></p-dropdown>
+              </div>
 
 
-      <!-- Contenido de las pestañas -->
-      <div class="tab-content" id="pills-tabContent">
-        <!-- Formulario Tours -->
-        <div class="tab-pane fade show active" id="tours" role="tabpanel" aria-labelledby="tours-tab">
-          <form class="row g-3">
-            <div class="col-12 col-md-4">
-              <label for="ubicacion" class="form-label">Ubicación</label>
-              <input type="text" class="form-control" id="ubicacion" placeholder="Islandia, cualquier ubicación">
-            </div>
-            <div class="col-6 col-md-2">
-              <label for="fechaInicio" class="form-label">Fecha inicio</label>
-              <input type="date" class="form-control" id="fechaInicio" value="2024-08-03">
-            </div>
-            <div class="col-6 col-md-2">
-              <label for="fechaFin" class="form-label">Fecha fin</label>
-              <input type="date" class="form-control" id="fechaFin" value="2024-08-09">
-            </div>
-            <div class="col-12 col-md-2">
-              <label for="personas" class="form-label">Personas</label>
-              <select class="form-select" id="personas">
-                <option selected>1 persona</option>
-                <option value="2">2 personas</option>
-                <option value="3">3 personas</option>
-              </select>
-            </div>
-            <div class="col-12 col-md-2 d-flex align-items-end">
-              <button type="submit" class="btn btn-success w-100">Buscar</button>
-            </div>
-          </form>
-        </div>
+              <!-- Botón de búsqueda -->
+              <div class="flex flex-col justify-end">
+                <button pButton type="submit" label="Buscar coche" class="w-full"
+                  styleClass="p-button-success"></button>
+              </div>
+            </form>
+          </div>
+        </p-tabpanel>
+        <p-tabpanel value="2">
+          <p class="m-0">
+            At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti
+            atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique
+            sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum
+            facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil
+            impedit quo minus.
+          </p>
+        </p-tabpanel>
+        <p-tabpanel value="3">
+          <p class="m-0">
+            At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti
+            atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique
+            sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum
+            facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil
+            impedit quo minus.
+          </p>
+        </p-tabpanel>
+      </p-tabpanels>
+    </p-tabs>
 
-        <!-- Formulario Coches -->
-        <div class="tab-pane fade" id="coches" role="tabpanel" aria-labelledby="coches-tab">
-          <form class="row g-3">
-            <div class="col-12 col-md-4">
-              <label for="ubicacion" class="form-label">Elegir ubicación</label>
-              <select class="form-select" id="pickup-location">
-                <option selected disabled>Selecciona una ubicación</option>
-                <option value="islandia-reykjavik">Reykjavik</option>
-                <option value="islandia-akureyri">Akureyri</option>
-                <option value="islandia-selfoss">Selfoss</option>
-                <option value="islandia-keflavik">Keflavik</option>
-              </select>
-            </div>
-            <div class="col-6 col-md-2">
-              <label for="fechaInicio" class="form-label">Fecha de recogida</label>
-              <input type="date" class="form-control" id="fechaInicio" value="2024-08-03">
-            </div>
-            <div class="col-6 col-md-2">
-              <label for="fechaFin" class="form-label">Hora de recogida</label>
-              <input type="time" class="form-control" id="pickup-time">
-            </div>
-            <div class="col-6 col-md-2">
-              <label for="driver-age" class="form-label">Edad del conductor</label>
-              <input type="number" class="form-control" id="driver-age" placeholder="Ingresa tu edad" min="18">
-            </div>
-            <div class="col-12 col-md-2">
-              <label for="residence-country" class="form-label">Vivo en</label>
-              <select class="form-select" id="residence-country">
-                <option selected disabled>Selecciona tu país</option>
-                <option value="es">España</option>
-                <option value="is">Islandia</option>
-                <option value="fr">Francia</option>
-                <option value="us">Estados Unidos</option>
-                <option value="other">Otro</option>
-              </select>
-            </div>
-            <div class="col-12 col-md-2 d-flex align-items-end">
-              <button type="submit" class="btn btn-success w-100">Buscar Coches</button>
-            </div>
-          </form>
-
-        </div>
-      </div>
-
-    </div>
   </div>
 </div>
